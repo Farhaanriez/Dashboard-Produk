@@ -1,8 +1,3 @@
-// FILE: components/SearchableList.tsx
-// =====================================================================
-// CLIENT COMPONENT - SEARCHABLE PRODUCT LIST (Enhanced Design)
-// =====================================================================
-
 'use client';
 
 import { useState } from 'react';
@@ -27,8 +22,7 @@ export default function SearchableList({ initialProducts }: SearchableListProps)
 
   return (
     <div className="space-y-8">
-      
-      {/* Search Section dengan glass effect */}
+    
       <div className="glass rounded-2xl p-6 shadow-xl">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center text-2xl shadow-lg animate-float">
@@ -49,12 +43,11 @@ export default function SearchableList({ initialProducts }: SearchableListProps)
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full px-5 py-4 pl-12 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all duration-300 text-gray-700 placeholder-gray-400 shadow-sm"
           />
-          {/* Icon search di dalam input */}
+          
           <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl">
             🔎
           </div>
           
-          {/* Clear button */}
           {searchQuery && (
             <button
               onClick={() => setSearchQuery('')}
@@ -64,8 +57,7 @@ export default function SearchableList({ initialProducts }: SearchableListProps)
             </button>
           )}
         </div>
-        
-        {/* Result counter */}
+
         <div className="mt-4 flex items-center justify-between">
           <p className="text-sm text-gray-600">
             {searchQuery ? (
@@ -76,8 +68,7 @@ export default function SearchableList({ initialProducts }: SearchableListProps)
               <>Total <span className="font-bold text-blue-600">{initialProducts.length}</span> produk tersedia</>
             )}
           </p>
-          
-          {/* Filter tags */}
+
           {searchQuery && (
             <div className="flex items-center gap-2">
               <span className="text-xs text-gray-500">Filter aktif:</span>
@@ -89,7 +80,6 @@ export default function SearchableList({ initialProducts }: SearchableListProps)
         </div>
       </div>
 
-      {/* Product Grid atau Empty State */}
       {filteredProducts.length === 0 ? (
         <div className="glass rounded-2xl p-12 text-center shadow-xl">
           <div className="text-6xl mb-4 animate-float">😕</div>

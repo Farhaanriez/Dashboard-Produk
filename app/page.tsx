@@ -1,8 +1,3 @@
-// FILE: app/page.tsx
-// =====================================================================
-// HALAMAN UTAMA - SERVER COMPONENT (Enhanced Design)
-// =====================================================================
-
 import { products } from '@/data/products';
 import SearchableList from '@/components/SearchableList';
 
@@ -18,7 +13,6 @@ export default async function HomePage() {
     <main className="min-h-screen py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header dengan gradient */}
         <div className="text-center mb-12">
           <div className="inline-block mb-4">
             <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center text-4xl shadow-2xl pulse-glow animate-float">
@@ -31,11 +25,10 @@ export default async function HomePage() {
           </h1>
           
           <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
-            Demonstrasi lengkap Next.js App Router dengan SSR, CSR, dan Dynamic Routing
+            Next.js App Router dengan SSR, CSR, dan Dynamic Routing
           </p>
         </div>
 
-        {/* Info Panel dengan glassmorphism */}
         <div className="glass rounded-2xl p-8 mb-12 shadow-2xl border-2 border-white/50">
           <div className="flex items-start gap-4 mb-6">
             <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center text-2xl shadow-lg flex-shrink-0">
@@ -108,17 +101,8 @@ export default async function HomePage() {
           </div>
         </div>
 
-        {/* Searchable List */}
         <SearchableList initialProducts={allProducts} />
         
-        {/* Footer */}
-        <div className="mt-16 text-center">
-          <div className="glass rounded-2xl p-6 inline-block shadow-xl">
-            <p className="text-gray-600">
-              💡 <span className="font-semibold">Tips:</span> Klik tombol "Lihat Detail" untuk melihat Dynamic Routing
-            </p>
-          </div>
-        </div>
       </div>
     </main>
   );

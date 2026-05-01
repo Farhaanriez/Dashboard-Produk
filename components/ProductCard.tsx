@@ -1,8 +1,3 @@
-// FILE: components/ProductCard.tsx
-// =====================================================================
-// KOMPONEN REUSABLE - PRODUCT CARD (Enhanced Design)
-// =====================================================================
-
 import Link from 'next/link';
 import { Product } from '@/data/products';
 
@@ -20,7 +15,6 @@ export default function ProductCard({ product }: ProductCardProps) {
     }).format(angka);
   };
 
-  // Emoji untuk kategori
   const getCategoryIcon = (kategori: string) => {
     switch(kategori) {
       case 'Elektronik': return '💻';

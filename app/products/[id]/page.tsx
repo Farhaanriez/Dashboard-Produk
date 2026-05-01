@@ -1,8 +1,3 @@
-// FILE: app/products/[id]/page.tsx
-// =====================================================================
-// HALAMAN DETAIL PRODUK - DYNAMIC ROUTING (Enhanced Design)
-// =====================================================================
-
 import { products } from '@/data/products';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -214,36 +209,6 @@ export default async function ProductDetailPage({ params }: PageProps) {
                 <span>🔗</span>
                 <span className="hidden sm:inline">Share</span>
               </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Educational Note */}
-        <div className="mt-8 glass rounded-2xl p-6 shadow-xl">
-          <div className="flex items-start gap-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center text-2xl shadow-lg flex-shrink-0">
-              💡
-            </div>
-            <div>
-              <h3 className="font-bold text-gray-800 mb-2">Catatan untuk Presentasi:</h3>
-              <ul className="text-sm text-gray-700 space-y-2">
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-600">•</span>
-                  <span>Halaman ini menggunakan <strong>Dynamic Route</strong> dengan parameter <code className="bg-blue-100 px-2 py-0.5 rounded">[id]</code></span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-600">•</span>
-                  <span>Data di-fetch di <strong>server</strong> (SSR) berdasarkan ID dari URL</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-600">•</span>
-                  <span>Di Next.js 15, params adalah <strong>Promise</strong> yang harus di-await</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-600">•</span>
-                  <span>SEO metadata di-generate secara dinamis untuk setiap produk</span>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
