@@ -1,5 +1,4 @@
 export const colors = {
-  // Primary colors - warna utama brand
   primary: {
     50: '#eff6ff',
     100: '#dbeafe',
@@ -13,7 +12,6 @@ export const colors = {
     900: '#1e3a8a',
   },
   
-  // Semantic colors - warna dengan makna khusus
   semantic: {
     success: '#10b981',
     warning: '#f59e0b',
@@ -21,7 +19,6 @@ export const colors = {
     info: '#3b82f6',
   },
   
-  // Neutral colors - warna netral untuk teks, background, dll
   neutral: {
     white: '#ffffff',
     black: '#000000',

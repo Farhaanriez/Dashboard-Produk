@@ -7,20 +7,12 @@ import {
 } from '../types/product.types';
 import { mockProducts, delay } from './mockData';
 
-// =====================================================================
-// MOCK API FUNCTIONS (Simulasi API dengan data dummy)
-// =====================================================================
-// Nanti diganti dengan real API calls
-
 export const productApi = {
-  // Get all products dengan filter
   getProducts: async (filters?: ProductFilters): Promise<Product[]> => {
-    // Simulate API delay
     await delay(800);
     
     let filtered = [...mockProducts];
     
-    // Filter by search query
     if (filters?.search) {
       const query = filters.search.toLowerCase();
       filtered = filtered.filter(
@@ -28,13 +20,11 @@ export const productApi = {
              p.kategori.toLowerCase().includes(query)
       );
     }
-    
-    // Filter by kategori
+
     if (filters?.kategori) {
       filtered = filtered.filter(p => p.kategori === filters.kategori);
     }
-    
-    // Filter by harga range
+
     if (filters?.minHarga !== undefined) {
       filtered = filtered.filter(p => p.harga >= filters.minHarga!);
     }
@@ -45,15 +35,13 @@ export const productApi = {
     return filtered;
   },
   
-  // Get single product by ID
   getProductById: async (id: number): Promise<Product | null> => {
     await delay(500);
     
     const product = mockProducts.find(p => p.id === id);
     return product || null;
   },
-  
-  // Get unique categories
+
   getCategories: async (): Promise<string[]> => {
     await delay(300);
     
@@ -62,9 +50,6 @@ export const productApi = {
   },
 };
 
-// =====================================================================
-// REAL API FUNCTIONS (Commented out - untuk referensi)
-// =====================================================================
 // Uncomment dan sesuaikan ketika sudah ada real API
 
 /*

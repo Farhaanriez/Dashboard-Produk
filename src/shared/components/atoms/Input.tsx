@@ -6,7 +6,6 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   helperText?: string;
 }
 
-// forwardRef diperlukan kalau kita mau akses input element dari parent
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ label, error, helperText, className = '', ...props }, ref) => {
     

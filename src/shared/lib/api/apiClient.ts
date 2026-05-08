@@ -1,6 +1,5 @@
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
 
-// Custom error class untuk API errors
 export class ApiError extends Error {
   constructor(
     message: string,
@@ -12,14 +11,12 @@ export class ApiError extends Error {
   }
 }
 
-// Generic API client function
 async function apiClient<T>(
   endpoint: string,
   options: RequestInit = {}
 ): Promise<T> {
   const url = `${API_BASE_URL}${endpoint}`;
   
-  // Default headers
   const headers = {
     'Content-Type': 'application/json',
     ...options.headers,
@@ -31,7 +28,6 @@ async function apiClient<T>(
       headers,
     });
     
-    // Cek apakah response OK (status 200-299)
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
       throw new ApiError(
@@ -41,17 +37,14 @@ async function apiClient<T>(
       );
     }
     
-    // Parse JSON response
     const data = await response.json();
     return data as T;
     
   } catch (error) {
-    // Jika error adalah ApiError, throw ulang
     if (error instanceof ApiError) {
       throw error;
     }
-    
-    // Jika error lain (network error, dll), wrap dalam ApiError
+
     throw new ApiError(
       error instanceof Error ? error.message : 'Network error',
       0
@@ -59,7 +52,6 @@ async function apiClient<T>(
   }
 }
 
-// Export HTTP methods
 export const api = {
   get: <T>(endpoint: string, options?: RequestInit) =>
     apiClient<T>(endpoint, { ...options, method: 'GET' }),

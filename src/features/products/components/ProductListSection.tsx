@@ -15,7 +15,6 @@ export default function ProductListSection() {
   
   const debouncedSearch = useDebounce(searchQuery, 500);
   
-  // Fetch products dengan filter
   const { data: products, isLoading, error } = useProducts({
     search: debouncedSearch,
     kategori: selectedCategory || undefined,

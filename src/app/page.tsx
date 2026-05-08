@@ -1,4 +1,3 @@
-// import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import { Header } from '@/shared/components/organism/Header';
 import { Spinner } from '@/shared/components/atoms/Spinner';
@@ -51,7 +50,6 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* Best Practices Info Panel */}
         <div className="glass rounded-2xl p-8 mb-12 shadow-2xl border-2 border-white/50">
           <div className="flex items-start gap-4 mb-6">
             <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center text-2xl shadow-lg flex-shrink-0">
@@ -87,7 +85,7 @@ export default function HomePage() {
               {
                 icon: '⚡',
                 title: 'Performance Optimization',
-                desc: 'Debouncing + Memoization',
+                desc: 'Debouncing + Memoization + Lazy Loading',
                 color: 'from-green-500 to-teal-500'
               },
               {
@@ -121,15 +119,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Product List Section with Suspense */}
-        {/* <Suspense fallback={
-          <div className="flex items-center justify-center py-20">
-            <Spinner size="lg" />
-            <span className="ml-3 text-gray-600">Memuat produk...</span>
-          </div>
-        }>
-          <ProductListSection />
-        </Suspense> */}
         <ProductListSection />
       </main>
     </div>
